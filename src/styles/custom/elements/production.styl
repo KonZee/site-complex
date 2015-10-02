@@ -1,0 +1,75 @@
+.production
+	&__all-goods
+		display block
+		position absolute
+		right 0
+		top 20px
+		font-size 20px
+		text-decoration none
+		border-bottom 1px dashed $brand-primary
+		&:hover
+			text-decoration none
+	&__catalog
+		height 240px
+		background $brand-primary
+		color $white
+		padding 10px 8px
+		text-align center
+		line-height 2em
+		font-weight 600
+		position relative
+		a
+			display block
+			color inherit
+			&:hover
+				font-weight bold
+	&__info
+		height 240px
+		border 1px solid $gray-lighter
+		position relative
+		img
+			position absolute
+			left 50%
+			top 50%
+			transform translate(-50%, -50%)
+			max-width calc(100% - 2px)
+			max-height 238px
+		.text
+			position absolute
+			display block
+			left 8px
+			right 8px
+			bottom 10px
+			padding 10px 13px
+			background $brand-primary
+			color $white
+			font-weight bold
+
+.corners
+	&:before
+	&:after
+		position absolute
+		display block
+		content ""
+		width 26px
+		height 26px
+		border 1px solid transparent
+		pointer-events none
+	&--top
+		&:before
+			left 7px
+			top 7px
+			border-color $white transparent transparent $white
+		&:after
+			right 7px
+			top 7px
+			border-color $white $white transparent transparent
+	&--bottom
+		&:before
+			left 7px
+			bottom 7px
+			border-color transparent transparent $white $white
+		&:after
+			right 7px
+			bottom 7px
+			border-color transparent $white $white transparent

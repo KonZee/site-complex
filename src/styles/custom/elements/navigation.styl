@@ -1,0 +1,31 @@
+.navigation
+	border-color $gray-lighter
+	border-style solid
+	border-width 1px 0
+	ul
+		height 48px
+	&__item
+		display block
+		float left
+		a
+			display block
+			padding 0 25px
+			color $black
+			font-weight 600
+			span
+				display inline-block
+				padding 13px 0
+				border-bottom 2px solid transparent
+				transition border-color 350ms
+			&:focus
+				outline none
+		&:first-child
+			a
+				padding 0 25px 0 0
+		&:last-child
+			a
+				padding 0 0 0 25px
+		&.active
+		&:hover
+			a span
+				border-bottom-color $brand-primary

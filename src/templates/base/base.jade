@@ -1,10 +1,60 @@
 doctype html
 html(lang='en')
 
+	include lipsum
 	include ../elements/head
 
+
 	body
+		header
+			.container
+				.row
+					.col-md-7
+						.branding
+							a(href="").branding__logo
+								img(src="images/logo.png")
+							.branding__slogan
+								| Лучшие компрессоры
+								br
+								| и генераторы в Хабаровске
+					.col-md-3
+						.phone +7 (4212) 94-00-34
+					.col-md-2
+						a(href="").checkout-link Оформить заказ
+		.navigation
+			.container
+				.row
+					.col-md-9
+						ul
+							li.navigation__item.active
+								a(href="")
+									span Главная
+							li.navigation__item
+								a(href="")
+									span О компании
+							li.navigation__item
+								a(href="")
+									span Каталог
+							li.navigation__item
+								a(href="")
+									span Запчасти
+							li.navigation__item
+								a(href="")
+									span Аренда
+							li.navigation__item
+								a(href="")
+									span Новости
+							li.navigation__item
+								a(href="")
+									span Контакты
+					.col-md-3
+						form.search
+							input(type="text" placeholder="Поиск по сайту").search__input
+							a(href="").search__button
+								i.fa.fa-search
 
 		block content
+
+		footer
 
 	include ../elements/scripts
