@@ -1,3 +1,21 @@
 ul
 	margin 0
 	padding 0
+
+// Inline grid
+.inline-container
+	&--center
+		text-align center
+.inline-col
+	display inline-block
+	float none
+	vertical-align top
+	width 270px
+	padding-left 15px
+	padding-right 15px
+	@media screen and (min-width: $screen-sm)
+		width calc(50% - 4px)
+	@media screen and (min-width: $screen-md)
+		width calc(33.333% - 4px)
+	@media screen and (min-width: $screen-lg)
+		width calc(25% - 4px)

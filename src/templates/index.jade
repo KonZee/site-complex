@@ -3,16 +3,17 @@ extends base/base
 block content
 	.production.container
 		.row
+			.col-xs-12
+				h2.title.title__h2 Наша продукция
+				a(href="").production__all-goods Все товары
+		.row.inline-container--center
 			mixin production()
 				.production__info
 					a(href="")
 						img(src="images/production__item.jpg")
 						.text
 							+lipsum(Math.floor(Math.random() * 3 + 1), "words")
-			.col-xs-12
-				h2.title.title__h2 Наша продукция
-				a(href="").production__all-goods Все товары
-			.col-md-3
+			.inline-col
 				.production__catalog
 					a(href="")
 						+lipsum(2, "words")
@@ -28,11 +29,13 @@ block content
 					.corners.corners--top
 					.corners.corners--bottom
 
-			.col-md-3
+			.inline-col
 				+production()
-			.col-md-3
+			.inline-col
 				+production()
-			.col-md-3
+			.inline-col
+				+production()
+			.inline-col
 				+production()
 
 	.partners.container
@@ -50,3 +53,41 @@ block content
 			.partners__info
 				.text Запасные части для различного оборудования всех марок и моделей
 				a(href).link Заказать запчасть
+
+	.clients.container
+		.row
+			.col-cs-12.text-center
+				h2.title.title__h2.title__h2--center Наши клиенты
+			mixin client()
+				.col-xs-12.col-sm-4.col-md-3.col-lg-2
+					a(href="").clients__item
+						img(src="images/client__logo.png")
+			+client()
+			+client()
+			+client()
+			+client()
+			+client()
+			+client()
+
+	.container
+		.row
+			.col-xs-12.col-md-6.col-md-push-6.block-news
+				h2.title.title__h2 Новости
+				a(href="").block-news__all-news Все новости
+				mixin news()
+					.block-news__item.clearfix
+						img(src="http://dummyimage.com/68x68/444444/ffffff")
+						.data
+							i.fa.fa-clock-o
+							| 27.09.2015
+						a(href="").text
+							+lipsum (10, "words")
+
+
+				+news()
+				+news()
+				+news()
+			.col-xs-12.col-md-5.col-md-pull-6.block-about
+				h2.title.title__h2 О компании
+				p Компания ООО «Комплекс технологий» была основана в 2010 году. Основным направлением деятельности компании является поставка импортной дорожно-строительной и строительной техники, запасных частей и расходных материалов из Китая, Испании, Швеции.
+				p Вся дорожно-строительная техника, поставляемая нами, отличается высоким качеством, надежностью и пользуется особой популярностью. 

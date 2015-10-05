@@ -91,7 +91,6 @@ gulp.task('clean', function(){
 	del(path.dest);
 });
 
-
 gulp.task('imagemin', function(){
 	return gulp.src(path.images)
 	.pipe(plumber())

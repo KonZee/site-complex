@@ -9,7 +9,7 @@ html(lang='en')
 		header
 			.container
 				.row
-					.col-md-7
+					.col-md-6.col-lg-7
 						.branding
 							a(href="").branding__logo
 								img(src="images/logo.png")
@@ -17,9 +17,9 @@ html(lang='en')
 								| Лучшие компрессоры
 								br
 								| и генераторы в Хабаровске
-					.col-md-3
+					.col-md-3.col-lg-3
 						.phone +7 (4212) 94-00-34
-					.col-md-2
+					.col-md-3.col-lg-2
 						a(href="").checkout-link Оформить заказ
 		.navigation
 			.container
@@ -56,5 +56,58 @@ html(lang='en')
 		block content
 
 		footer
+			.footer-info
+				.container
+					.row
+						.col-md-4
+							.footer-info__mail
+								.description E-mail:
+								.mail
+									a(href="") complex-tech@mail.ru
+									br
+									a(href="") complextech@complextech.ru
+						.col-md-4
+							.footer-info__branding
+								.name ООО "Комплекс технологой"
+								.address г. Хабаровск, 2005-2015
+
+						.col-md-4
+							.footer-info__phones
+								.description
+									| Тел:
+									br
+									| Факс:
+								.phones
+									| +7 (4212) 94-00-34
+									br
+									| +7 (4212) 55-08-88
+
+			.footer-nav
+				.container
+					.row
+						.col-md-8
+							ul
+								li.footer-nav__item.active
+									a(href="")
+										span Главная
+								li.footer-nav__item
+									a(href="")
+										span О компании
+								li.footer-nav__item
+									a(href="")
+										span Каталог
+								li.footer-nav__item
+									a(href="")
+										span Запчасти
+								li.footer-nav__item
+									a(href="")
+										span Аренда
+								li.footer-nav__item
+									a(href="")
+										span Новости
+								li.footer-nav__item
+									a(href="")
+										span Контакты
+						.col-md-4.text-right Разработано в студии <a href="">Webpro</a>
 
 	include ../elements/scripts
