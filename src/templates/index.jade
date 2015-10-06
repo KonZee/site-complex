@@ -1,12 +1,30 @@
 extends base/base
 
 block content
+	.container.slider
+			.slider__item
+				img(src="http://dummyimage.com/1140x335/00ff00/fff")
+				a(href="")
+					+lipsum(Math.floor(Math.random() * 5) + 2, "words")
+			.slider__item
+				img(src="http://dummyimage.com/1140x335/ff0000/fff")
+				a(href="")
+					+lipsum(Math.floor(Math.random() * 5) + 2, "words")
+			.slider__item
+				img(src="http://dummyimage.com/1140x335/0000ff/fff")
+				a(href="")
+					+lipsum(Math.floor(Math.random() * 5) + 2, "words")
+			.slider__nav.slider__nav--prev
+				i.fa.fa-chevron-left
+			.slider__nav.slider__nav--next
+				i.fa.fa-chevron-right
+
 	.production.container
 		.row
 			.col-xs-12
 				h2.title.title__h2 Наша продукция
 				a(href="").production__all-goods Все товары
-		.row.inline-container--center
+		.row.inline-container
 			mixin production()
 				.production__info
 					a(href="")

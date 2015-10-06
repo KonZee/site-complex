@@ -1,21 +1,26 @@
+// Reset
 ul
 	margin 0
 	padding 0
 
-// Inline grid
+// Header
+@media screen and (max-width: $screen-sm-max)
+	header
+		background #21252a
+
+// flex grid
 .inline-container
-	&--center
-		text-align center
+	display flex
+	flex-wrap wrap
+	justify-content center
 .inline-col
-	display inline-block
-	float none
-	vertical-align top
+	flex 0 0 auto
 	width 270px
 	padding-left 15px
 	padding-right 15px
 	@media screen and (min-width: $screen-sm)
-		width calc(50% - 4px)
+		width 50%
 	@media screen and (min-width: $screen-md)
-		width calc(33.333% - 4px)
+		width 33.333%
 	@media screen and (min-width: $screen-lg)
-		width calc(25% - 4px)
+		width 25%

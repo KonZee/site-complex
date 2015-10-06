@@ -9,22 +9,27 @@ html(lang='en')
 		header
 			.container
 				.row
-					.col-md-6.col-lg-7
+					.col-xs-6.col-md-6.col-lg-7
 						.branding
 							a(href="").branding__logo
 								img(src="images/logo.png")
-							.branding__slogan
+							.branding__slogan.hidden-xs.hidden-sm
 								| Лучшие компрессоры
 								br
 								| и генераторы в Хабаровске
-					.col-md-3.col-lg-3
+					.col-xs-6.col-md-3.col-lg-3
 						.phone +7 (4212) 94-00-34
-					.col-md-3.col-lg-2
+					.col-md-3.col-lg-2.hidden-xs.hidden-sm
 						a(href="").checkout-link Оформить заказ
 		.navigation
 			.container
 				.row
 					.col-md-9
+						button.navigation__hamburger
+							span.icon-bar
+							span.icon-bar
+							span.icon-bar
+
 						ul
 							li.navigation__item.active
 								a(href="")

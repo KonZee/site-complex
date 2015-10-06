@@ -6,6 +6,13 @@
 		float left
 		width 218px
 		padding-left 15px
+		max-width 100%
+		img
+			max-width 100%
+		@media screen and (max-width: $screen-sm-max)
+			float right
+			img
+				float right
 	&__slogan
 		color $gray-light
 		float left
