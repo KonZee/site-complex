@@ -1,4 +1,6 @@
 // Reset
+a:focus
+	outline none
 ul
 	margin 0
 	padding 0
@@ -24,3 +26,26 @@ ul
 		width 33.333%
 	@media screen and (min-width: $screen-lg)
 		width 25%
+
+// Wrappers
+.wrapper
+	&--gray
+		background #f5f5f5
+
+// To top button
+.to-top
+	display block
+	width 36px
+	height 36px
+	background $brand-primary
+	color $white
+	border-radius 4px
+	text-align center
+	padding-top 5px
+	font-size 1.2em
+	position absolute
+	right 0
+	top -6px
+	cursor pointer
+	@media screen and (max-width: $screen-sm-max)
+		display none

@@ -1,8 +1,18 @@
 .slider
 	position relative
 	overflow hidden
-	margin-top 25px
-	margin-bottom 25px
+	height 29vw
+	@media screen and (max-width: $screen-sm-max)
+		margin-left -15px
+		margin-right -15px
+	@media screen and (min-width: $screen-sm)
+		margin-bottom 25px
+		height 212px
+	@media screen and (min-width: $screen-md)
+		margin-top 25px
+		height 276px
+	@media screen and (min-width: $screen-lg)
+		height 335px
 	img
 		max-width 100%
 		height auto

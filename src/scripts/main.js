@@ -1,15 +1,30 @@
 $(document).ready(function(){
 
 	/*
+	 * Menu
+	 */
+	$('.navigation__hamburger').click(function(){
+		$(this).toggleClass('expanded');
+		$(this).siblings('ul').slideToggle();
+	});
+	$('.navigation__item--submenu a').click(function(e){
+		e.preventDefault();
+		$(this).parent().toggleClass('expanded');
+		$(this).siblings('ul').slideToggle();
+	});
+
+	/*
+	 * Scroll top
+	 */
+	$('.to-top').click(function(){
+		$('html, body').animate({scrollTop: 0});
+	});
+
+	/*
 	 * Slider
 	 */
 	var slider = $('.slider');
 	var sliderHeight = 0;
-	$('.slider__item img').load().each(function(){
-		if($(this).height() > sliderHeight){sliderHeight = $(this).height();}
-	});
-	$('.slider').height(sliderHeight);
-
 	var interval = 5000;
 	var timer;
 	var sliderItem = $('.slider__item');

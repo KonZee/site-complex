@@ -37,9 +37,16 @@ html(lang='en')
 							li.navigation__item
 								a(href="")
 									span О компании
-							li.navigation__item
+							li.navigation__item.navigation__item--submenu
 								a(href="")
 									span Каталог
+								ul
+									li.navigation__submenu-item
+										a(href="") Водоподготовка
+									li.navigation__submenu-item
+										a(href="") Строительное оборудование
+									li.navigation__submenu-item
+										a(href="") Дизельные генераторы
 							li.navigation__item
 								a(href="")
 									span Запчасти
@@ -71,7 +78,7 @@ html(lang='en')
 									a(href="") complex-tech@mail.ru
 									br
 									a(href="") complextech@complextech.ru
-						.col-md-4
+						.col-md-4.hidden-xs.hidden-sm
 							.footer-info__branding
 								.name ООО "Комплекс технологой"
 								.address г. Хабаровск, 2005-2015
@@ -90,7 +97,7 @@ html(lang='en')
 			.footer-nav
 				.container
 					.row
-						.col-md-8
+						.col-xs-12.col-md-8
 							ul
 								li.footer-nav__item.active
 									a(href="")
@@ -113,6 +120,9 @@ html(lang='en')
 								li.footer-nav__item
 									a(href="")
 										span Контакты
-						.col-md-4.text-right Разработано в студии <a href="">Webpro</a>
+						.col-xs-12.col-md-4
+							.footer-nav__dev Разработано в студии <a href="">Webpro</a>
+							.to-top
+								i.fa.fa-chevron-up
 
 	include ../elements/scripts

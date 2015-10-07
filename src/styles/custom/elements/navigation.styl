@@ -36,22 +36,55 @@
 
 	@media screen and (max-width: $screen-sm-max)
 		ul
-			//display none
+			display none
 			position absolute
 			top 50px
 			width 254px
 			left 0
 			z-index 100
 			background #21252a
-			padding 20px
+			padding 20px 0
 		&__item
 			display block
-			padding 10px
 			font-weight bold
-			a
+			> a
+				padding 10px 30px
+				display block
 				color $white
+				width 100%
+				text-decoration none
+			&--submenu
+				ul
+					display none
+					position static
+					width 100%
+					padding 0 0 0 30px
+				> a
+					position relative
+					&:after
+						display block
+						content "\f078"
+						font-family FontAwesome
+						font-size 0.7em
+						position absolute
+						left 100px
+						top 13px
+				&.expanded
+					background #1c1d20
+					> a
+						color $brand-primary
+		&__submenu-item
+			display block
+			font-size 0.8em
+			> a
+				display block
+				color $white
+				padding 8px 15px 8px 20px
+				text-decoration none
+
+
 	@media screen and (min-width: $screen-md)
-		ul
+		> ul
 			height 48px
 		&__item
 			display block
@@ -60,10 +93,7 @@
 				display block
 				color $black
 				font-weight 600
-				@media screen and (min-width: $screen-md)
-					padding 0 15px
-				@media screen and (min-width: $screen-lg)
-					padding 0 25px
+				padding 0 15px
 				span
 					display inline-block
 					padding 13px 0
@@ -73,18 +103,62 @@
 					outline none
 			&:first-child
 				a
-					@media screen and (min-width: $screen-md)
-						padding 0 15px 0 0
-					@media screen and (min-width: $screen-lg)
-						padding 0 25px 0 0
+					padding 0 15px 0 0
 			&:last-child
 				a
-					@media screen and (min-width: $screen-md)
-						padding 0 0 0 15px
-					@media screen and (min-width: $screen-lg)
-						padding 0 0 0 25px
+					padding 0 0 0 15px
 
 			&.active
 			&:hover
 				a span
 					border-bottom-color $brand-primary
+
+			&--submenu
+				position relative
+				> a
+					padding-right 25px
+					position relative
+					&:after
+						display block
+						content "\f078"
+						font-family FontAwesome
+						font-size 0.7em
+						position absolute
+						right 8px
+						top 15px
+				ul
+					display none
+					position absolute
+					z-index 1000
+					background $white
+					top calc(100% + 1px)
+					left 25px
+					border-left 1px solid $gray-lighter
+					border-right 1px solid $gray-lighter
+					border-bottom 2px solid $brand-primary
+					padding 12px 0
+					min-width 160px
+					li
+						display block
+					a
+						display block
+						padding 4px 10px
+						font-weight normal
+						text-decoration none
+				&:hover
+					ul
+						display block
+
+	@media screen and (min-width: $screen-lg)
+		&__item
+			a
+				padding 0 25px
+			&:first-child
+				a
+					padding 0 25px 0 0
+			&:last-child
+				a
+					padding 0 0 0 25px
+			&--submeny
+				> a
+					padding-right 35px
