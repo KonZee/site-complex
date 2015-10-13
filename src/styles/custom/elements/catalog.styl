@@ -1,0 +1,103 @@
+.catalog
+	display flex
+	flex-wrap wrap
+	justify-content center
+	margin-left -15px
+	margin-right -15px
+	&__item
+		height 240px
+		position relative
+		margin-bottom 30px
+		padding-left 15px
+		padding-right 15px
+		flex 0 0 280px
+		@media screen and (min-width: $screen-xs) and (max-width: $screen-xs-max)
+			flex 0 0 50%
+		@media screen and (min-width: $screen-sm) and (max-width: $screen-sm-max)
+			flex 0 0 33.333%
+		@media screen and (min-width: $screen-md) and (max-width: $screen-md-max)
+			flex 0 0 33.333%
+		@media screen and (min-width: $screen-lg)
+			flex 0 0 25%
+		> a
+			display block
+			width 100%
+			height 100%
+			border 1px solid $gray-lighter
+			position relative
+		img
+			position absolute
+			left 50%
+			top 50%
+			transform translate(-50%, -50%)
+			max-width calc(100% - 2px)
+			max-height 238px
+		.text
+			position absolute
+			display block
+			left 8px
+			right 8px
+			bottom 10px
+			padding 10px 13px
+			background $brand-primary
+			color $white
+			font-weight bold
+
+	&__links
+		opacity 0
+		transition opacity 350ms
+		position absolute
+		left 15px
+		right 15px
+		top 0
+		bottom 0
+		background $brand-primary
+		color $white
+		padding 10px 8px
+		text-align center
+		line-height 2em
+		font-weight 600
+		a
+			display block
+			color inherit
+			&:hover
+				font-weight bold
+		.links
+			position absolute
+			top 50%
+			left 0
+			right 0
+			transform translateY(-50%)
+
+	&__item:hover
+		.catalog__links
+			opacity 1
+
+.corners
+	&:before
+	&:after
+		position absolute
+		display block
+		content ""
+		width 26px
+		height 26px
+		border 1px solid transparent
+		pointer-events none
+	&--top
+		&:before
+			left 7px
+			top 7px
+			border-color $white transparent transparent $white
+		&:after
+			right 7px
+			top 7px
+			border-color $white $white transparent transparent
+	&--bottom
+		&:before
+			left 7px
+			bottom 7px
+			border-color transparent transparent $white $white
+		&:after
+			right 7px
+			bottom 7px
+			border-color transparent $white $white transparent

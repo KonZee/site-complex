@@ -1,0 +1,196 @@
+.product
+	&__presence
+		position absolute
+		left (100% * 5 / 12)
+		top 25px
+		padding-left 40px
+		&:before
+			position absolute
+			display block
+			content "\f00c"
+			font-family FontAwesome
+			left 0
+		&:after
+			position absolute
+			display block
+			content "\f068"
+			font-family FontAwesome
+			left 20px
+			top 0
+		&--aviable
+			&:before
+				color $brand-primary
+			&:after
+				color $gray-lighter
+		&--notaviable
+			&:before
+				color $gray-lighter
+			&:after
+				color $brand-primary
+	&__tabs
+		border-bottom 3px solid $brand-primary
+		> li
+			max-width 50%
+			margin-bottom 0
+			> a
+				border none
+				color $gray
+				&:hover,
+				&:focus
+					border none
+			&.active
+				> a
+					border none
+					background $brand-primary
+					color $white
+					&:hover,
+					&:focus
+						border none
+						background $brand-primary
+						color $white
+		@media screen and (max-width: $screen-xs-max)
+			font-size 12px
+			text-align center
+			> li
+				> a
+					padding 2px 10px
+					height 40px
+		@media screen and (min-width: $screen-md)
+			> li
+				&:first-child > a
+					margin-left 10px
+				&:last-child > a
+					margin-right 10px
+
+
+.product-decsription
+	padding 0 10px
+	background $gray-lighter
+	font-style italic
+	font-size 14px
+	&:first-child
+		margin-top 12px
+	&:last-child
+		margin-bottom 10px
+	@media screen and (min-width: $screen-sm)
+		float left
+		width calc(50% - 3px)
+		margin 12px 0 10px
+		&:first-child
+			margin-right 3px
+		&:last-child
+			margin-left 3px
+	&__item
+		padding 4px 20px
+		display flex
+		@media screen and (min-width: $screen-sm)
+			&:not(:last-child)
+				border-bottom 5px dotted $white
+		.name
+			flex 0 0 50%
+			color $727272
+		.info
+			flex 0 0 50%
+			color #131318
+
+
+.product-contact
+	display flex
+	@media screen and (max-width: $screen-xs)
+		flex-wrap wrap
+	@media screen and (min-width: $screen-md) and (max-width: $screen-md-max)
+		flex-wrap wrap
+	&__form
+		flex 1 1 auto
+		margin-right 9px
+		padding 13px
+		background $gray-lighter
+		@media screen and (max-width: $screen-xs)
+			flex 0 0 100%
+		@media screen and (min-width: $screen-md) and (max-width: $screen-md-max)
+			flex 0 0 100%
+		input
+			width 100%
+			border 1px solid #ededed
+			margin-bottom 4px
+		button
+			margin-top 15px
+			width 100%
+			border none
+			background $brand-primary
+			color $white
+			border-radius 4px
+			padding 5px 0 5px 32px
+			position relative
+			height 30px
+			&:before
+				display block
+				content "\f040"
+				font-family FontAwesome
+				position absolute
+				left 0
+				top 0
+				width 32px
+				height 30px
+				padding-left 3px
+				padding-top 5px
+				border-right 1px solid #fd6233
+	&__connects
+		flex 0 0 225px
+		display flex
+		flex-direction column
+		@media screen and (max-width: $screen-xs)
+			flex 0 0 100%
+			margin-top 7px
+		@media screen and (min-width: $screen-md) and (max-width: $screen-md-max)
+			flex 0 0 100%
+			margin-top 7px
+		.phone-connect
+			flex 1 1 auto
+			background $gray-lighter
+			text-align center
+			padding 8px
+			font-size 14px
+			line-height 17px
+			strong
+				font-size 16px
+				line-height 22px
+			@media screen and (max-width: $screen-xs)
+				padding 14px 8px
+		.link
+			flex 1 1 auto
+			background $gray-lighter
+			margin-top 7px
+			padding 7px
+			font-size 14px
+			line-height 17px
+			text-align center
+			position relative
+			text-decoration none
+			font-weight bold
+			color #646464
+			transition 150ms
+			@media screen and (max-width: $screen-xs)
+				padding 14px 7px
+			@media screen and (min-width: $screen-md) and (max-width: $screen-md-max)
+				padding 14px 7px
+			&:before
+				content "\f0ed"
+				font-family FontAwesome
+				display block
+				position absolute
+				color rgba(32,32,32,0.1)
+				font-size 35px
+				left 20px
+				top 50%
+				transform translateY(-50%)
+			span
+				display block
+				position relative
+				z-index 1
+				top 50%
+				transform translateY(-50%)
+			&:hover,
+			&:focus
+				color $white
+				background $brand-primary

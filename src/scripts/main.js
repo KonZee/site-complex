@@ -73,4 +73,12 @@ $(document).ready(function(){
 		currentItem = nextItem;
 	}
 
+	/*
+	 * Tabs
+	 */
+	$('.nav-tabs a').click(function(e){
+		e.preventDefault();
+		$(this).tab('show');
+	})
+
 });

@@ -51,31 +51,3 @@
 			color $white
 			font-weight bold
 
-.corners
-	&:before
-	&:after
-		position absolute
-		display block
-		content ""
-		width 26px
-		height 26px
-		border 1px solid transparent
-		pointer-events none
-	&--top
-		&:before
-			left 7px
-			top 7px
-			border-color $white transparent transparent $white
-		&:after
-			right 7px
-			top 7px
-			border-color $white $white transparent transparent
-	&--bottom
-		&:before
-			left 7px
-			bottom 7px
-			border-color transparent transparent $white $white
-		&:after
-			right 7px
-			bottom 7px
-			border-color transparent $white $white transparent

@@ -1,0 +1,47 @@
+extends base/base
+
+block bccontent
+	a(href="").breadcrumbs__link Главная страница
+	.breadcrumbs__separator
+		i.fa.fa-circle
+	.breadcrumbs__current Каталог
+
+block content
+	.container
+		.row
+			.col-xs-12
+				h2.title.title__h2.title__h2--inner Каталог
+		.catalog
+			mixin catalog_item()
+				.catalog__item
+					a(href="")
+						img(src="images/production__item.jpg")
+						.text
+							+lipsum(Math.floor(Math.random() * 3 + 1), "words")
+					.catalog__links
+						- var rnd = Math.random();
+						- if (rnd < 0.5){
+							a(href="") Ссылка на каталог
+							.links
+								a(href="")
+									+lipsum(2, "words")
+								a(href="")
+									+lipsum(2, "words")
+								a(href="")
+									+lipsum(2, "words")
+								a(href="")
+									+lipsum(2, "words")
+						-}
+						-else{
+							.links
+								a(href="") Каталог >4 пунктов
+						-}
+						.corners.corners--top
+						.corners.corners--bottom
+
+			+catalog_item()
+			+catalog_item()
+			+catalog_item()
+			+catalog_item()
+			+catalog_item()
+			+catalog_item()

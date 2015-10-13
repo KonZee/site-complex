@@ -64,8 +64,16 @@ html(lang='en')
 							input(type="text" placeholder="Поиск по сайту").search__input
 							a(href="").search__button
 								i.fa.fa-search
+		.content
+			block breadcrumbs
+				.container
+					.row
+						.col-xs-12
+							.breadcrumbs
+								block bccontent
+									a(href="").breadcrumbs__link Главная страница
 
-		block content
+			block content
 
 		footer
 			.footer-info

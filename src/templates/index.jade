@@ -1,5 +1,7 @@
 extends base/base
 
+block breadcrumbs
+
 block content
 	.container
 		.slider
@@ -25,37 +27,39 @@ block content
 			.col-xs-12
 				h2.title.title__h2 Наша продукция
 				a(href="").production__all-goods Все товары
-		.row.inline-container
-			mixin production()
-				.production__info
+		.catalog
+			mixin catalog_item()
+				.catalog__item
 					a(href="")
 						img(src="images/production__item.jpg")
 						.text
 							+lipsum(Math.floor(Math.random() * 3 + 1), "words")
-			.inline-col
-				.production__catalog
-					a(href="")
-						+lipsum(2, "words")
-					br
-					a(href="")
-						+lipsum(2, "words")
-					a(href="")
-						+lipsum(2, "words")
-					a(href="")
-						+lipsum(2, "words")
-					a(href="")
-						+lipsum(2, "words")
-					.corners.corners--top
-					.corners.corners--bottom
+					.catalog__links
+						- var rnd = Math.random();
+						- if (rnd < 0.5){
+							a(href="") Ссылка на каталог
+							.links
+								a(href="")
+									+lipsum(2, "words")
+								a(href="")
+									+lipsum(2, "words")
+								a(href="")
+									+lipsum(2, "words")
+								a(href="")
+									+lipsum(2, "words")
+						-}
+						-else{
+							.links
+								a(href="") Каталог >4 пунктов
+						-}
+						.corners.corners--top
+						.corners.corners--bottom
 
-			.inline-col
-				+production()
-			.inline-col
-				+production()
-			.inline-col
-				+production()
-			.inline-col
-				+production()
+			+catalog_item()
+			+catalog_item()
+			+catalog_item()
+			+catalog_item()
+			+catalog_item()
 
 	.partners.container
 		.row

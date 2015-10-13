@@ -1,0 +1,69 @@
+extends base/base
+
+block bccontent
+	a(href="").breadcrumbs__link Главная страница
+	.breadcrumbs__separator
+		i.fa.fa-circle
+	a(href="").breadcrumbs__link Каталог
+	.breadcrumbs__separator
+		i.fa.fa-circle
+	.breadcrumbs__current Товар
+
+block content
+	.container.product
+		.row
+			.col-xs-12
+				h2.title.title__h2.title__h2--inner
+					+lipsum(8,"words")
+				.product__presence.product__presence--aviable Товар в наличии
+		.row
+			.col-xs-12.col-md-7
+				h3 image
+				ul.nav.nav-tabs.product__tabs
+					li(role="presentation").active
+						a(href="#description" aria-controls="description" role="tab" data-toggle="tab") Характеристики
+					li(role="presentation")
+						a(href="#docs" aria-controls="docs" role="tab" data-toggle="tab") Техническая документация
+				.tab-content
+					.tab-pane.active#description(role="tabpanel")
+						mixin item()
+							.product-decsription__item
+								.name
+									+lipsum(Math.ceil(Math.random()*7 + 8), "characters")
+									| :
+								.info
+									+lipsum(Math.ceil(Math.random()*7 + 8), "characters")
+						.product-decsription
+							+item()
+							+item()
+							+item()
+							+item()
+							+item()
+						.product-decsription
+							+item()
+							+item()
+							+item()
+							+item()
+							+item()
+
+					.tab-pane#docs(role="tabpanel")
+						h2 dasdasd
+			.col-xs-12.col-md-5
+				.product__contact.product-contact
+					form.product-contact__form
+						input(name="name", placeholder="Ваше имя")
+						input(name="phone", placeholder="Ваш телефон")
+						button Оставить заявку
+					.product-contact__connects
+						.phone-connect
+							| Вы можете связаться с нами по телефону
+							br
+							strong +7 (4212) 94-00-34
+						a(href="").link
+							span Скачать коммерческое предложение
+
+				.product__info
+					h5
+						strong
+							+lipsum(Math.floor(Math.random() * 3 + 3), "words")
+					+lipsum(2, "paragraphs")
