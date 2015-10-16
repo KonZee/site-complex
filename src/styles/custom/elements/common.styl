@@ -67,3 +67,23 @@ footer
 	cursor pointer
 	@media screen and (max-width: $screen-sm-max)
 		display none
+
+// Pagination
+.pagination
+	margin 20px 0 40px
+	> li
+		> a
+		> span
+			border-color #e5e5e5
+			&:hover
+				background-color #f2f2f2
+		&:not(:first-child):not(:last-child):not(.active)
+			> a
+			> span
+				color #000
+		&.active
+			> a
+			> span
+				color $white
+				background $brand-pimary
+				border-color #e5e5e5

@@ -70,8 +70,10 @@ html(lang='en')
 					.row
 						.col-xs-12
 							.breadcrumbs
-								block bccontent
-									a(href="").breadcrumbs__link Главная страница
+								a(href="").breadcrumbs__back Вернуться назад
+								.breadcrumbs__wrapper
+									block bccontent
+										a(href="").breadcrumbs__link Главная страница
 
 			block content
 
@@ -88,7 +90,7 @@ html(lang='en')
 									a(href="") complextech@complextech.ru
 						.col-md-4.hidden-xs.hidden-sm
 							.footer-info__branding
-								.name ООО "Комплекс технологой"
+								.name ООО "Комплекс технологий"
 								.address г. Хабаровск, 2005-2015
 
 						.col-md-4
@@ -133,4 +135,5 @@ html(lang='en')
 							.to-top
 								i.fa.fa-chevron-up
 
-	include ../elements/scripts
+	block scripts
+		include ../elements/scripts

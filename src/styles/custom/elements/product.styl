@@ -1,7 +1,7 @@
 .product
 	&__presence
 		position absolute
-		left (100% * 5 / 12)
+		right 0
 		top 25px
 		padding-left 40px
 		&:before
@@ -27,6 +27,41 @@
 				color $gray-lighter
 			&:after
 				color $brand-primary
+
+	&__image
+		display flex
+		flex-wrap wrap
+		margin-bottom 20px
+		.big
+			flex 0 0 calc(100% - 190px)
+			padding-right 10px
+			@media screen and (min-width: $screen-md) and (max-width: $screen-md-max)
+				flex 0 0 100%
+				padding 0
+				margin-bottom 10px
+			@media screen and (max-width: 600px)
+				flex 0 0 100%
+				padding 0
+				margin-bottom 10px
+		.small
+			flex 0 0 180px
+			display flex
+			flex-wrap wrap
+			@media screen and (min-width: $screen-md) and (max-width: $screen-md-max)
+				flex 0 0 100%
+			@media screen and (max-width: 600px)
+				flex 0 0 100%
+			a
+				flex 0 0 100%
+				@media screen and (min-width: $screen-md) and (max-width: $screen-md-max)
+					flex 0 0 (100% / 3)
+				@media screen and (max-width: 600px)
+					flex 0 0 (100% / 3)
+		img
+			width 100%
+			max-width 100%
+			height auto
+
 	&__tabs
 		border-bottom 3px solid $brand-primary
 		> li
@@ -61,6 +96,8 @@
 					margin-left 10px
 				&:last-child > a
 					margin-right 10px
+	&__info
+		margin-bottom 60px
 
 
 .product-decsription
@@ -75,11 +112,13 @@
 	@media screen and (min-width: $screen-sm)
 		float left
 		width calc(50% - 3px)
-		margin 12px 0 10px
+		margin 12px 0 20px
 		&:first-child
 			margin-right 3px
 		&:last-child
 			margin-left 3px
+	@media screen and (min-width: $screen-md)
+		margin-bottom 60px
 	&__item
 		padding 4px 20px
 		display flex
@@ -88,7 +127,7 @@
 				border-bottom 5px dotted $white
 		.name
 			flex 0 0 50%
-			color $727272
+			color #727272
 		.info
 			flex 0 0 50%
 			color #131318
@@ -100,6 +139,8 @@
 		flex-wrap wrap
 	@media screen and (min-width: $screen-md) and (max-width: $screen-md-max)
 		flex-wrap wrap
+	@media screen and (min-width: $screen-md)
+		margin-top 70px
 	&__form
 		flex 1 1 auto
 		margin-right 9px

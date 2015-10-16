@@ -14,6 +14,15 @@ $(document).ready(function(){
 	});
 
 	/*
+	 * Breadcrumbs
+	 */
+	$('.breadcrumbs__back').click(function(e){
+		e.preventDefault();
+		$(this).toggleClass('expanded');
+		$('.breadcrumbs__wrapper').slideToggle();
+	});
+
+	/*
 	 * Scroll top
 	 */
 	$('.to-top').click(function(){
@@ -80,5 +89,14 @@ $(document).ready(function(){
 		e.preventDefault();
 		$(this).tab('show');
 	})
+
+	/*
+	 * Product images
+	 */
+	$('.product__image a').click(function(e){
+		e.preventDefault();
+		var url = $(this).data('url');
+		$('.product__image .big img').attr('src', url);
+	});
 
 });

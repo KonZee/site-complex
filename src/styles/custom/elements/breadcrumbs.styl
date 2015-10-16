@@ -3,15 +3,95 @@
 	padding 15px 0
 	font-size 12px
 	&__link
-		display inline-block
 		color #9f9fa3
-	&__separator
-		display inline-block
-		color #e8e8e8
-		font-size 0.5em
-		margin 0 10px
-		position relative
-		top -2px
 	&__current
-		display inline-block
 		color #393943
+	@media screen and (max-width: $screen-xs-max)
+		font-size 12px
+		&__wrapper
+			display none
+		&__separator
+			display none
+		&__link
+		&__current
+			padding 6px 20px 6px 25px
+			display block
+			border-left 1px solid $gray-lighter
+			border-right 1px solid $gray-lighter
+			position relative
+			&:before
+				content ""
+				display block
+				position absolute
+				height 4px
+				width 4px
+				border-radius 50%
+				background $gray-lighter
+				left 12px
+				top 13px
+			&:first-child
+				padding-top 13px
+				&:before
+					top 19px
+			&:last-child
+				padding-bottom 13px
+				border-bottom 2px solid $brand-primary
+	@media screen and (min-width: $screen-sm)
+		&__link
+			display inline-block
+		&__separator
+			display inline-block
+			color #e8e8e8
+			font-size 0.5em
+			margin 0 10px
+			position relative
+			top -2px
+		&__current
+			display inline-block
+			cursor default
+
+	&__back
+		display block
+		background $brand-primary
+		color $white
+		padding 7px 32px 5px 42px
+		height 32px
+		font-weight bold
+		font-size 12px
+		position relative
+		&:hover
+		&:focus
+			color $white
+			text-decoration none
+		@media screen and (min-width: $screen-sm)
+			display none
+		&:before
+			content "\f060"
+			display block
+			position absolute
+			font-family FontAwesome
+			font-size 14px
+			font-weight normal
+			height 32px
+			width 40px
+			left 0
+			top 0
+			padding-left 13px
+			padding-top 5px
+		&:after
+			content "\f078"
+			display block
+			position absolute
+			font-family FontAwesome
+			font-size 14px
+			font-weight normal
+			height 32px
+			width 32px
+			right 0
+			top 0
+			padding-left 9px
+			padding-top 5px
+		&.expanded
+			&:after
+				background $black
+				content "\f077"

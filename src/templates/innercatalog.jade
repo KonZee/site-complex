@@ -7,4 +7,144 @@ block bccontent
 	.breadcrumbs__current Каталог
 
 block content
+	.container.innercatalog
+		.row
+			.col-xs-12.col-md-4.col-lg-3
+				form.innercatalog__filters
+					h5 Чекбоксы
+					label
+						input(type="checkbox")#manufacturer-atlas
+						span Atlas
+					label
+						input(type="checkbox")#manufacturer-alup
+						span Alup
+					label
+						input(type="checkbox")#manufacturer-cat
+						span Cat
+					label
+						input(type="checkbox")#manufacturer-compas
+						span Компас
+					h5 Радио
+					label
+						input(type="radio" name="radio")#radio-1
+						span Радио 1
+					label
+						input(type="radio" name="radio")#radio-2
+						span Радио 2
+					label
+						input(type="radio" name="radio")#radio-3
+						span Радио 2
+					h5 Рэндж
+					.slider-range-wrapper.clearfix
+						input(type="text" name="slider-range-min").slider-range-min
+						.slider-range-line
+						input(type="text" name="slider-range-max").slider-range-max
+					.slider-range
+					button.find Найти
+					button.clear Сбросить фильтры
+				.innercatalog__menu
+					a(href="").active Дизельные компрессоры
+					a(href="") Электрические компрессоры
+			.col-xs-12.col-md-8.col-lg-9
+				h2.title.title__h2.title__h2--inner
+					+lipsum(4,"words")
+				mixin item()
+					.innercatalog__item
+						.img
+							img(src="http://dummyimage.com/220x170/000000/fff")
+						.description
+							h4
+								+lipsum(5, "words")
+							p
+								+lipsum(5, "sentences")
+						table
+							thead
+								tr
+									th
+										+lipsum(Math.floor(Math.random() * 2 ) + 1, "words")
+									th
+										+lipsum(Math.floor(Math.random() * 2 ) + 1, "words")
+									th
+										+lipsum(Math.floor(Math.random() * 2 ) + 1, "words")
+									th
+										+lipsum(Math.floor(Math.random() * 2 ) + 1, "words")
+									th
+										+lipsum(Math.floor(Math.random() * 2 ) + 1, "words")
+									th
+							tbody
+								tr
+									td(data-label="Имя колонки 1")
+										+lipsum(Math.floor(Math.random() * 2 ) + 1, "words")
+									td(data-label="Колонка 2")
+										+lipsum(Math.floor(Math.random() * 2 ) + 1, "words")
+									td(data-label="Название колонки  3")
+										+lipsum(Math.floor(Math.random() * 2 ) + 1, "words")
+									td(data-label="Имя колонки  4")
+										+lipsum(Math.floor(Math.random() * 2 ) + 1, "words")
+									td(data-label="Имя колонки  5")
+										+lipsum(Math.floor(Math.random() * 2 ) + 1, "words")
+									td
+										button Подробнее
+								tr
+									td(data-label="Имя колонки 1")
+										+lipsum(Math.floor(Math.random() * 2 ) + 1, "words")
+									td(data-label="Колонка 2")
+										+lipsum(Math.floor(Math.random() * 2 ) + 1, "words")
+									td(data-label="Название колонки  3")
+										+lipsum(Math.floor(Math.random() * 2 ) + 1, "words")
+									td(data-label="Имя колонки  4")
+										+lipsum(Math.floor(Math.random() * 2 ) + 1, "words")
+									td(data-label="Имя колонки  5")
+										+lipsum(Math.floor(Math.random() * 2 ) + 1, "words")
+									td
+										button Подробнее
+								tr
+									td(data-label="Имя колонки 1")
+										+lipsum(Math.floor(Math.random() * 2 ) + 1, "words")
+									td(data-label="Колонка 2")
+										+lipsum(Math.floor(Math.random() * 2 ) + 1, "words")
+									td(data-label="Название колонки  3")
+										+lipsum(Math.floor(Math.random() * 2 ) + 1, "words")
+									td(data-label="Имя колонки  4")
+										+lipsum(Math.floor(Math.random() * 2 ) + 1, "words")
+									td(data-label="Имя колонки  5")
+										+lipsum(Math.floor(Math.random() * 2 ) + 1, "words")
+									td
+										button Подробнее
+				+item()
+				+item()
+				ul.pagination
+					li
+						a(href="" aria-label="Previsous")
+							span(aria-hidden="true") &laquo;
+					li.active
+						a(href="") 1
+					li
+						a(href="") 2
+					li
+						a(href="") 3
+					li
+						a(href="") 4
+					li
+						a(href="") 5
+					li
+						a(href="" aria-label="Next")
+							span(aria-hidden="true") &raquo;
 
+block append scripts
+	script.
+		$(function() {
+			$( ".slider-range").slider({
+				range: true,
+				min: 10000,
+				max: 90000,
+				values: [ 20000, 80000 ],
+				step: 1000,
+				slide: function( event, ui ) {
+				$( ".slider-range-min" ).val(ui.values[ 0 ]);
+				$( ".slider-range-max" ).val(ui.values[ 1 ] );
+				}
+			});
+			$( ".slider-range-min" ).val($( ".slider-range" ).slider( "values", 0 ));
+			$( ".slider-range-max" ).val($( ".slider-range" ).slider( "values", 1 ));
+		});
