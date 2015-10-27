@@ -1,0 +1,64 @@
+extends base/base
+
+block bccontent
+	a(href="").breadcrumbs__link Главная страница
+	.breadcrumbs__separator
+		i.fa.fa-circle
+	.breadcrumbs__current Контакты
+
+block content
+	.container
+		.row
+			.col-xs-12
+				h2.title.title__h2.title__h2--inner Контакты
+		.contacts
+			.col-xs-12.col-md-8
+				.row
+					.col-xs-12.col-md-6
+						p
+							| Адрес: г. Хабаровск, ул. Промышленная,
+							br
+							| дом 3, офис 405
+							br
+							| Телефон: +7 (4212) 940-034
+							br
+							| Email: <a href="mailto:complextech@complextech.ru">complextech@complextech.ru</a>
+					.col-xs-12.col-md-6.text-right
+						p
+							| Режим работы: пн.-пт.: с 9:00 до 18:00
+							br
+							| Обед: с 13:00 до 14:00
+					.col-xs-12
+						h3 Наши сотрудники
+					mixin employee()
+						.col-xs-12.col-md-6
+							.employee
+								.employee__image
+									img(src="http://dummyimage.com/67x67/000000/fff&text=employee")
+								.employee__text
+									.position
+										+lipsum(2,"words")
+									.name
+										+lipsum(3, "words")
+									.contact-info
+										| Тел/факс: +7 (4212) 78 43 85
+										br
+										| Мобильный: +7&nbsp;(4212)&nbsp;940&nbsp;034, +7&nbsp;924&nbsp;404&nbsp;0034
+										br
+										| Email: <a href="mailto:complextech@complextech.ru">complextech@complextech.ru</a>
+
+					+employee()
+					+employee()
+					+employee()
+					+employee()
+					+employee()
+					+employee()
+					+employee()
+
+
+
+			.col-xs-12.col-md-4
+				h3 Form
+
+	.map
+		img(src="http://dummyimage.com/1920x300/00ff51/ffffff&text=It's+map")
