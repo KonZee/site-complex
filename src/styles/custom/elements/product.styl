@@ -124,7 +124,7 @@
 		display flex
 		@media screen and (min-width: $screen-sm)
 			&:not(:last-child)
-				border-bottom 5px dotted $white
+				border-bottom 2px dotted $white
 		.name
 			flex 0 0 50%
 			color #727272
@@ -154,28 +154,42 @@
 			width 100%
 			border 1px solid #ededed
 			margin-bottom 4px
+			height 29px
+			font-style italic
+			padding 5px 7px
 		button
 			margin-top 15px
 			width 100%
 			border none
-			background $brand-primary
-			color $white
+			color $brand-primary
+			background $white
+			border 2px solid $brand-primary
 			border-radius 4px
-			padding 5px 0 5px 32px
+			padding 3px 0 5px 32px
 			position relative
 			height 30px
+			overflow hidden
+			transition-property color, background
+			transition-duration 350ms
+			&:hover
+				background $brand-primary
+				color $white
 			&:before
 				display block
 				content "\f040"
 				font-family FontAwesome
 				position absolute
+				z-index 1
 				left 0
-				top 0
+				top -2px
 				width 32px
-				height 30px
-				padding-left 3px
-				padding-top 5px
+				height 32px
+				padding-left 1px
+				padding-top 3px
 				border-right 1px solid #fd6233
+				box-shadow 0 2px 0 $brand-primary
+				background $brand-primary
+				color $white
 	&__connects
 		flex 0 0 225px
 		display flex

@@ -208,13 +208,21 @@
 				&:before
 					display block
 					content attr(data-label)
-					width 50%
+					width 48%
+					min-height 100%
 					float left
 					color #828282
+				&:after
+					display table
+					content ""
+					clear both
 				&:first-child
 					border-bottom 1px solid $brand-primary
+				span
+					display block
+					margin-left 52%
 			button
-				margin-left 50%
+				margin-left 52%
 			thead
 				display none
 

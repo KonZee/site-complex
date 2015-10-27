@@ -131,7 +131,7 @@
 					position absolute
 					z-index 1000
 					background $white
-					top calc(100% + 1px)
+					top 100%
 					left 25px
 					border-left 1px solid $gray-lighter
 					border-right 1px solid $gray-lighter
@@ -145,6 +145,10 @@
 						padding 4px 10px
 						font-weight normal
 						text-decoration none
+						color #919191
+						transition color 350ms
+						&:hover
+							color #303030
 				&:hover
 					ul
 						display block

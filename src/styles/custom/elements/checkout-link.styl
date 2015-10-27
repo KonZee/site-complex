@@ -5,13 +5,19 @@
 	height 30px
 	padding 3px 6px 3px 32px
 	border 2px solid $brand-primary
+	background $brand-primary
+	color #fff
 	border-radius 4px
 	position relative
+	transition-properties background, color
+	transition-duration 350ms
 	@media screen and (min-width: $screen-md) and (max-width: $screen-md-max)
 		width 165px
 		float right
 	&:hover
 		text-decoration none
+		background #fff
+		color $brand-primary
 	&:before
 		content "\f040"
 		font-family FontAwesome
