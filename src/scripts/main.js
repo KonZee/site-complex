@@ -99,4 +99,8 @@ $(document).ready(function(){
 		$('.product__image .big img').attr('src', url);
 	});
 
+	/*
+	 * Add item to car parts order list
+	 */
+
 });

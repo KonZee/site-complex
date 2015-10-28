@@ -1,3 +1,8 @@
+.employees
+	@media screen and (min-width: $screen-md)
+		&:nth-child(2n + 1)
+			clear both
+
 .employee
 	background #f5f5f5
 	padding 16px
@@ -6,6 +11,7 @@
 
 	&__image
 		float left
+		margin-top 19px
 		img
 			display block
 			border-radius 50%

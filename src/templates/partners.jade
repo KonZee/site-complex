@@ -9,5 +9,29 @@ block bccontent
 block content
 	.container
 		.row
-			.col-xs-12
-				h2.title.title__h2.title__h2--inner Партнеры
+
+			.col-xs-12.col-md-8
+				.row
+					.col-xs-12
+						h2.title.title__h2.title__h2--inner Партнеры
+				.partners
+					mixin partners()
+						.partners__item
+							img(src="images/partner__logo--small.png")
+					-for(var i = 0; i < 12; i++){
+						+partners()
+					-}
+
+			.col-xs-12.col-md-4
+				form.page-form
+					.page-form__title.text-center Заказать запчасть
+					input.page-form__input.page-form__input--text(placeholder="Ваше имя")
+					input.page-form__input.page-form__input--text(placeholder="Ваша почта")
+					input.page-form__input.page-form__input--text(placeholder="Ваш телефон")
+					span.page-form__text Перечень запчастей
+					input.page-form__input.page-form__input--text(placeholder="Артикул")
+					input.page-form__input.page-form__input--text(placeholder="Артикул")
+					a(href="").page-form__add-element
+						i.fa.fa-plus-square
+						span Добавить еще
+					button.page-form__button Отправить

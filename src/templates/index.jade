@@ -61,19 +61,19 @@ block content
 			+catalog_item()
 			+catalog_item()
 
-	.partners.container
+	.partners-index.container
 		.row
 			.col-xs-12.text-center
 				h2.title.title__h2.title__h2--center Наши партнеры
-		.row.partners__wrapper
+		.row.partners-index__wrapper
 			mixin partners()
 				.col-xs-6.col-sm-4.col-md-2
-					.partners__item
+					.partners-index__item
 						img(src="images/partner__logo.png")
 			-for(var i = 0; i < 12; i++){
 				+partners()
 			-}
-			.partners__info
+			.partners-index__info
 				.text Запасные части для различного оборудования всех марок и моделей
 				a(href).link Заказать запчасть
 

@@ -8,12 +8,11 @@ block bccontent
 
 block content
 	.container
-		.row
-			.col-xs-12
-				h2.title.title__h2.title__h2--inner Контакты
-		.contacts
+		.row.contacts
 			.col-xs-12.col-md-8
 				.row
+					.col-xs-12
+						h2.title.title__h2.title__h2--inner Контакты
 					.col-xs-12.col-md-6
 						p
 							| Адрес: г. Хабаровск, ул. Промышленная,
@@ -31,13 +30,13 @@ block content
 					.col-xs-12
 						h3 Наши сотрудники
 					mixin employee()
-						.col-xs-12.col-md-6
+						.col-xs-12.col-md-6.employees
 							.employee
 								.employee__image
 									img(src="http://dummyimage.com/67x67/000000/fff&text=employee")
 								.employee__text
 									.position
-										+lipsum(2,"words")
+										+lipsum(Math.ceil(Math.random() * 6 + 3),"words")
 									.name
 										+lipsum(3, "words")
 									.contact-info
@@ -46,7 +45,7 @@ block content
 										| Мобильный: +7&nbsp;(4212)&nbsp;940&nbsp;034, +7&nbsp;924&nbsp;404&nbsp;0034
 										br
 										| Email: <a href="mailto:complextech@complextech.ru">complextech@complextech.ru</a>
-
+				.row
 					+employee()
 					+employee()
 					+employee()
@@ -58,7 +57,13 @@ block content
 
 
 			.col-xs-12.col-md-4
-				h3 Form
+				form.contacts__form.page-form
+					.page-form__title.text-center Задать вопрос
+					input.page-form__input.page-form__input--text(placeholder="Ваше имя")
+					input.page-form__input.page-form__input--text(placeholder="Ваша почта")
+					textarea.page-form__input.page-form__input--textarea(placeholder="Ваше сообщение")
+					button.page-form__button Отправить
+
 
 	.map
-		img(src="http://dummyimage.com/1920x300/00ff51/ffffff&text=It's+map")
+		img(src="http://dummyimage.com/1920x300/00ff51/ffffff&text=Place+for+map")
