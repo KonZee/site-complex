@@ -100,7 +100,40 @@ $(document).ready(function(){
 	});
 
 	/*
+	 * Contacts page
+	 */
+	contactsHeight();
+
+	/*
 	 * Add item to car parts order list
 	 */
-
+	$('.page-form__add-element').click(function(e){
+		e.preventDefault();
+		var length = $('[name^="article-"]').length;
+		$(this).before('<input class="page-form__input page-form__input--text" placeholder="Артикул" name="article-'+ (length + 1) +'">');
+	});
 });
+
+$(window).resize(function(){
+	/*
+	 * Contacts page
+	 */
+	contactsHeight();
+});
+
+var contactsHeight = function(){
+	var employees = $('.employees');
+	employees.children('.employee').removeAttr('style');
+	if($(window).width() > 991){
+		employees.each(function(){
+			if($(this).index() % 2 === 0){
+				var employee1 = $(this).children('.employee');
+				var employee2 = $(this).next().children('.employee');
+				var height = employee1.height();
+				var siblHeight = employee2.height();
+				if(siblHeight > height){height = siblHeight}
+				employee1.height(height);
+				employee2.height(height);
+			}
+		});
+	}};
