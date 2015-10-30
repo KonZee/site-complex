@@ -12,7 +12,7 @@ html(lang='en')
 					.col-xs-6.col-md-6.col-lg-7
 						.branding
 							a(href="").branding__logo
-								img(src="images/logo.png")
+								img(src="images/logo.png" alt="Комплекс технологий")
 							.branding__slogan.hidden-xs.hidden-sm
 								| Лучшие компрессоры
 								br
@@ -135,5 +135,7 @@ html(lang='en')
 							.to-top
 								i.fa.fa-chevron-up
 
-	block scripts
-		include ../elements/scripts
+		block css
+			include ../elements/css
+		block scripts
+			include ../elements/scripts

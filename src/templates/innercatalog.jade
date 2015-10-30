@@ -51,7 +51,7 @@ block content
 				mixin item()
 					.innercatalog__item
 						.img
-							img(src="http://dummyimage.com/220x170/000000/fff")
+							img(src="http://dummyimage.com/220x170/000000/fff" alt="")
 						.description
 							h4
 								+lipsum(5, "words")
@@ -89,7 +89,7 @@ block content
 										span
 											+lipsum(Math.floor(Math.random() * 2 ) + 1, "words")
 									td
-										button Подробнее
+										a(href="") Подробнее
 								tr
 									td(data-label="Имя колонки 1")
 										span
@@ -107,7 +107,7 @@ block content
 										span
 											+lipsum(Math.floor(Math.random() * 2 ) + 1, "words")
 									td
-										button Подробнее
+										a(href="") Подробнее
 								tr
 									td(data-label="Имя колонки 1")
 										span
@@ -125,7 +125,7 @@ block content
 										span
 											+lipsum(Math.floor(Math.random() * 2 ) + 1, "words")
 									td
-										button Подробнее
+										a(href="") Подробнее
 				+item()
 				+item()
 				ul.pagination

@@ -6,6 +6,8 @@
 	line-height 24px
 	@media screen and (max-width: $screen-sm-max)
 		text-align center
+		font-size 22px
+		line-height 1.2
 	@media screen and (min-width: $screen-md)
 		padding 50px 0
 
@@ -17,6 +19,12 @@
 			font-weight bold
 		.mail a
 			color $white
+			@media screen and (max-width: $screen-sm-max)
+				display block
+				&:first-of-type
+					margin-top 0.5em
+				&:last-of-type
+					margin-bottom 1em
 		@media screen and (max-width: $screen-sm-max)
 			.description
 				float none

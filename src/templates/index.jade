@@ -6,15 +6,15 @@ block content
 	.container
 		.slider
 			.slider__item
-				img(src="http://dummyimage.com/1140x335/00ff00/fff")
+				img(src="http://dummyimage.com/1140x335/00ff00/fff" alt="")
 				a(href="")
 					+lipsum(Math.floor(Math.random() * 5) + 2, "words")
 			.slider__item
-				img(src="http://dummyimage.com/1140x335/ff0000/fff")
+				img(src="http://dummyimage.com/1140x335/ff0000/fff" alt="")
 				a(href="")
 					+lipsum(Math.floor(Math.random() * 5) + 2, "words")
 			.slider__item
-				img(src="http://dummyimage.com/1140x335/0000ff/fff")
+				img(src="http://dummyimage.com/1140x335/0000ff/fff" alt="")
 				a(href="")
 					+lipsum(Math.floor(Math.random() * 5) + 2, "words")
 			.slider__nav.slider__nav--prev
@@ -31,7 +31,7 @@ block content
 			mixin catalog_item()
 				.catalog__item
 					a(href="")
-						img(src="images/production__item.jpg")
+						img(src="images/production__item.jpg" alt="")
 						.text
 							+lipsum(Math.floor(Math.random() * 3 + 1), "words")
 					.catalog__links
@@ -69,13 +69,13 @@ block content
 			mixin partners()
 				.col-xs-6.col-sm-4.col-md-2
 					.partners-index__item
-						img(src="images/partner__logo.png")
+						img(src="images/partner__logo.png" alt="")
 			-for(var i = 0; i < 12; i++){
 				+partners()
 			-}
 			.partners-index__info
 				.text Запасные части для различного оборудования всех марок и моделей
-				a(href).link Заказать запчасть
+				a(href="").link Заказать запчасть
 
 	.clients.container
 		.row
@@ -84,7 +84,7 @@ block content
 			mixin client()
 				.col-xs-6.col-sm-4.col-md-4.col-lg-2
 					.clients__item
-						img(src="images/client__logo.png")
+						img(src="images/client__logo.png" alt="")
 			+client()
 			+client()
 			+client()
@@ -100,7 +100,7 @@ block content
 					a(href="").block-news__all-news Все новости
 					mixin news()
 						.block-news__item.clearfix
-							img(src="http://dummyimage.com/68x68/444444/ffffff")
+							img(src="http://dummyimage.com/68x68/444444/ffffff" alt="")
 							.data
 								i.fa.fa-clock-o
 								| 27.09.2015
