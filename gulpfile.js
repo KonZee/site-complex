@@ -11,7 +11,9 @@ var gulp = require('gulp'),
     cssnext = require('cssnext'),
     jshint = require('gulp-jshint'),
     csscomb = require('gulp-csscomb'),
-    plumber = require('gulp-plumber');
+    plumber = require('gulp-plumber'),
+    penthouse = require('penthouse'),
+    cleanCSS = require('clean-css');
 
 var path = {};
 path.src = "src/";
@@ -21,7 +23,7 @@ path.jade = path.src + "templates/*.jade";
 path.jadeWatch = path.src + "templates/**/*.jade"
 
 path.stylus = [
-	path.src + "styles/custom/**/*.styl",
+	path.src + "styles/custom/*.styl",
 	path.src + "styles/bootstrap/bootstrap.styl"
 ];
 path.stylusWatch = path.src + "styles/**/*.styl";
@@ -33,7 +35,7 @@ path.jshint = [
 	"!" + path.dest + "js**/*.min.js"
 ]
 
-path.images = path.src + "images/**/*.+(png|jpg|gif)";
+path.images = path.src + "images/**/*.+(png|jpg|gif|ico)";
 path.svg= path.src + "images/**/*.svg";
 
 path.fonts = path.src + "fonts/**/*.*";
@@ -66,6 +68,21 @@ gulp.task('stylus', function(){
 	.pipe(csscomb())
 	.pipe(gulp.dest(path.dest + "css"))
 	.pipe(browserSync.stream());
+});
+
+
+gulp.task('critical', function(){
+	penthouse({
+		url: ['http://localhost:3000'],
+		css: 'dist/css/main.css'
+	}, function(error, criticalCSS){
+		var cleanCiticalCSS = new cleanCSS().minify(criticalCSS);
+		require('fs').writeFileSync('tmp/critical.css', cleanCiticalCSS.styles);
+	});
+});
+
+gulp.task('css', function(callback){
+	runSequence(['stylus'], ['critical'], callback);
 });
 
 /*
@@ -116,7 +133,7 @@ gulp.task('fonts', function(){
  */
 gulp.task('watch', function(){
 	gulp.watch(path.jadeWatch, ['jade']);
-	gulp.watch(path.stylusWatch, ['stylus']);
+	gulp.watch(path.stylusWatch, ['css']);
 	gulp.watch(path.js, ['js']);
 	gulp.watch(path.images, ['imagemin']);
 	gulp.watch(path.svg, ['svg']);
@@ -134,5 +151,5 @@ gulp.task('browsersync', function(){
 });
 
 gulp.task('default', function(callback){
-	runSequence(['jade', 'stylus', 'js', 'imagemin', 'svg', 'fonts'], ['watch', 'browsersync'], callback);
+	runSequence(['css'], ['jade', 'js', 'imagemin', 'svg', 'fonts'], ['watch', 'browsersync'], callback);
 });
