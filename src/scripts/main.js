@@ -1,6 +1,18 @@
 $(document).ready(function(){
 
 	/*
+	 * Order
+	 */
+	$('a.checkout-link').click(function(e){
+		e.preventDefault();
+		$('.popup').fadeIn();
+	});
+	$('.popup__shade, .popup__window > .cansel').click(function(e){
+		e.preventDefault();
+		$('.popup').fadeOut();
+	});
+
+	/*
 	 * Menu
 	 */
 	$('.navigation__hamburger').click(function(){

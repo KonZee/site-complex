@@ -1,0 +1,52 @@
+.popup
+	display none
+	position fixed
+	left 0
+	right 0
+	top 0
+	bottom 0
+	z-index 1000
+	&__shade
+		width 100%
+		height 100%
+		background rgba(0,0,0,0.5)
+	&__window
+		position absolute
+		left 50%
+		top 50%
+		transform translate(-50%,-50%)
+		width 370px
+		height 235px
+		border-top 5px solid $brand-primary
+		border-radius 5px
+		background $white
+		padding  0 30px 30px
+		> .title
+			text-transform uppercase
+			color $brand-primary
+			font-size 20px
+			font-weight bold
+			margin 18px 0
+		> input[type="text"]
+			width 100%
+			margin-bottom 15px
+			border 1px solid #ff9d7f
+			border-radius 4px
+			padding 10px
+			font-size 12px
+		> a
+			display inline-block
+			color $white
+			padding 7px 20px
+			border-radius 4px
+			font-weight bold
+			text-decoration none
+			&.submit
+				background $brand-primary
+			&.cansel
+				float right
+				background #acacac
+				transition 450ms
+				&:hover
+					background #4a4a4a
+

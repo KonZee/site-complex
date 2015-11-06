@@ -1,0 +1,92 @@
+doctype html
+html(lang='en')
+
+	include base/lipsum
+
+	head
+		meta(charset='utf-8')
+		meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimal-ui')
+
+		link(rel="shortcut icon" href="images/favicon.ico" type="image/x-icon")
+
+		title Коммерческое предложение
+
+		style
+			include ../../dist/css/offer.css
+
+	body
+		.offer
+			table.offer__header#header
+				tbody
+					tr.offer-header
+						td.offer-header__logo
+							img(src="images/logo.png" alt="Комплекс технологий")
+						td.offer-header__contacts
+							table
+								tbody
+									tr
+										td
+											img(src="images/phone.png" alt="+7 (4212) 94-00-34")
+										td
+											.text Контактный телефон:
+											.offer-phone +7 (4212) 94-00-34
+						td.offer-header__address
+							div Промышленное оборудование, ООО "Комплекс технологий"
+							div 680000, Россия, г. Хабаровск, ул. Промышленная, д. 3
+							div www.complextech.ru &nbsp;&nbsp;&nbsp; sales@complextech.ru
+
+			table.offer__title.title
+				tbody
+					tr
+						td
+							.title__circle
+						td
+							h2 Коммерческое предложение на CSP 90
+
+			table.offer__images
+				tbody
+					tr
+						td
+							img(src="images/production__item.jpg" alt="Комплекс технологий")
+						td
+							img(src="images/production__item.jpg" alt="Комплекс технологий")
+						td
+							img(src="images/production__item.jpg" alt="Комплекс технологий")
+						td
+							img(src="images/production__item.jpg" alt="Комплекс технологий")
+
+
+			h3 Описание и преимущества
+			+lipsum(2, 'paragraphs')
+
+			h3 Технические характеристики
+			table.offer__table
+				tr
+					td Характеристика
+					td Расшифровка
+				tr
+					td Характеристика
+					td Расшифровка
+				tr
+					td Характеристика
+					td Расшифровка
+				tr
+					td Характеристика
+					td Расшифровка
+
+
+			table.offer__footer.offer-footer#footer
+				tbody
+					tr
+						td.offer-footer__logo
+							img(src="images/logo.png" alt="Комплекс технологий")
+						td.offer-footer__contacts
+							.footer-phone +7 (4212) 94-00-34
+							.text г. Хабаровск, ул. Промышленная, д. 3, офис 405
+							.text complextech@complextech.ru
+
+
+
+	//-link(href='css/main.css' rel='stylesheet')
+	//-link(href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css')
+	//-link(href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet' type='text/css')

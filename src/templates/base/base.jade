@@ -135,6 +135,16 @@ html(lang='en')
 							.to-top
 								i.fa.fa-chevron-up
 
+		.popup
+			.popup__shade
+			.popup__window
+				.title.text-center Оформить заказ
+				input(type='text', placeholder="Ваше имя", name="name")
+				input(type='text', placeholder="Ваш телефон", name="phone")
+				a(href="").submit Отправить
+				a(href="").cansel Отмена
+
+
 		block css
 			include ../elements/css
 		block scripts
