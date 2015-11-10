@@ -37,18 +37,24 @@
 				padding-bottom 13px
 				border-bottom 2px solid $brand-primary
 	@media screen and (min-width: $screen-sm)
+		padding-bottom 12px
 		&__link
 			display inline-block
+			overflow hidden
 		&__separator
 			display inline-block
 			color #e8e8e8
 			font-size 0.5em
 			margin 0 10px
 			position relative
-			top -2px
+			top -8px
 		&__current
 			display inline-block
 			cursor default
+			overflow hidden
+			white-space nowrap
+			text-overflow ellipsis
+			max-width 120px
 
 	&__back
 		display block
