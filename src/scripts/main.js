@@ -5,9 +5,16 @@ $(document).ready(function(){
 	 */
 	$('a.checkout-link').click(function(e){
 		e.preventDefault();
+		$('.popup__window').hide();
+		$('.popup__window--1').show();
 		$('.popup').fadeIn();
 	});
-	$('.popup__shade, .popup__window > .cansel').click(function(e){
+	$('.popup__window > .submit').click(function(e){
+		e.preventDefault();
+		$('.popup__window--1').fadeOut();
+		$('.popup__window--2').delay(150).fadeIn();
+	});
+	$('.popup__shade, .popup__window > .cansel, .popup__window > .ok').click(function(e){
 		e.preventDefault();
 		$('.popup').fadeOut();
 	});

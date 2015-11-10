@@ -137,12 +137,16 @@ html(lang='en')
 
 		.popup
 			.popup__shade
-			.popup__window
+			.popup__window.popup__window--1
 				.title.text-center Оформить заказ
 				input(type='text', placeholder="Ваше имя", name="name")
 				input(type='text', placeholder="Ваш телефон", name="phone")
 				a(href="").submit Отправить
 				a(href="").cansel Отмена
+			.popup__window.popup__window--2
+				.title.text-center Заказ оформлен
+				.text Спасибо, ваш заказ оформлен. Наши специалисты свяжутся с вами в ближайшее время.
+				a(href="").ok ОК
 
 
 		block css

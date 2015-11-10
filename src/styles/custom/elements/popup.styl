@@ -11,16 +11,20 @@
 		height 100%
 		background rgba(0,0,0,0.5)
 	&__window
+		display none
 		position absolute
 		left 50%
 		top 50%
 		transform translate(-50%,-50%)
-		width 370px
-		height 235px
 		border-top 5px solid $brand-primary
 		border-radius 5px
 		background $white
 		padding  0 30px 30px
+		&--1
+			width 370px
+			height 235px
+		&--2
+			width 470px
 		> .title
 			text-transform uppercase
 			color $brand-primary
@@ -34,6 +38,12 @@
 			border-radius 4px
 			padding 10px
 			font-size 12px
+		> .text
+			font-style italic
+			font-size 15px
+			color #201f1f
+			text-align center
+			padding-bottom 20px
 		> a
 			display inline-block
 			color $white
@@ -49,4 +59,9 @@
 				transition 450ms
 				&:hover
 					background #4a4a4a
+			&.ok
+				background $brand-primary
+				float right
+				width 108px
+				text-align center
 
