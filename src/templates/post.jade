@@ -1,0 +1,25 @@
+extends base/base
+
+block bccontent
+	a(href="").breadcrumbs__link Главная страница
+	.breadcrumbs__separator
+		i.fa.fa-circle
+	a(href="").breadcrumbs__link Новости
+	.breadcrumbs__separator
+		i.fa.fa-circle
+	.breadcrumbs__current Поставка лучших генераторов от нашего поставщика в Хабаровске
+
+block content
+	.container.post
+		.row
+			.col-xs-12
+				h2.title.title__h2.title__h2--inner Поставка лучших генераторов от нашего поставщика в Хабаровске
+		.row
+			.col-xs-12
+				.post__data.data 13.08.2015
+				img(src="http://dummyimage.com/200x150/000/fff").images.images--left
+				p.post__paragraph
+					+lipsum(30,"sentences")
+				img(src="http://dummyimage.com/150x70/000/fff").images.images--right
+				p.post__paragraph
+					+lipsum(30,"sentences")

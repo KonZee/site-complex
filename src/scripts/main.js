@@ -26,8 +26,10 @@ $(document).ready(function(){
 		$(this).toggleClass('expanded');
 		$(this).siblings('ul').slideToggle();
 	});
-	$('.navigation__item--submenu a').click(function(e){
-		e.preventDefault();
+	$('.navigation__item--submenu > a').click(function(e){
+		if($(window).width() <= 991){
+			e.preventDefault();
+		}
 		$(this).parent().toggleClass('expanded');
 		$(this).siblings('ul').slideToggle();
 	});

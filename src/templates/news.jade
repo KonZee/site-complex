@@ -1,0 +1,63 @@
+extends base/base
+
+block bccontent
+	a(href="").breadcrumbs__link Главная страница
+	.breadcrumbs__separator
+		i.fa.fa-circle
+	.breadcrumbs__current Новости
+
+block content
+	.container
+		.row
+			.col-xs-12
+				h2.title.title__h2.title__h2--inner Новости
+		.row
+			// Важно! Этот раздел с последними новостями со второй страницы должен выводиться с классом hidden-xs.
+			.col-xs-12.col-sm-6.col-md-4
+				h3 Последние новости
+				mixin lastnews()
+					a(href="").last-news
+						.last-news__image
+							img(src="http://dummyimage.com/155x155/000/fff" alt="")
+						.last-news__title
+							+lipsum(Math.ceil(Math.random() * 5 + 2), 'words')
+						.last-news__data.data 12.08.2015
+						.last-news__text
+							+lipsum (3, 'sentences')
+				+lastnews()
+				+lastnews()
+				+lastnews()
+			mixin news()
+				a(href="").news
+					.news__image
+						img(src="http://dummyimage.com/60/000/fff" alt="")
+					.news__data.data 12.08.2015
+					.news__title
+						+lipsum(Math.ceil(Math.random() * 5 + 2), 'words')
+					.news__text
+						+lipsum (3, 'sentences')
+
+			.col-xs-12.col-sm-6.col-md-8
+				.news-wrapper
+					+news()
+					+news()
+					+news()
+					+news()
+					+news()
+					+news()
+					+news()
+					+news()
+				ul.pagination
+					li
+						a(href="" aria-label="Previous")
+							span(aria-hidden="true") &laquo;
+					li.active
+						a(href="") 1
+							span.sr-only (current)
+					li
+						a(href="") 2
+					li
+						a(href="") 3
+					li
+						a(href="" aria-label="next")
+							span(aria-hidden="true") &raquo;

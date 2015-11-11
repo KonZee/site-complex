@@ -1,0 +1,74 @@
+.news
+	display block
+	margin-bottom 25px
+	&:hover
+		text-decoration none
+	&:after
+		content ""
+		display table
+		clear both
+	@media screen and (min-width: $screen-md)
+		width calc(50% - 15px)
+		&:nth-child(2n + 1)
+			float left
+			clear left
+		&:nth-child(2n)
+			float right
+	&__title
+		font-size 13px
+		color #1d212b
+		font-weight 600
+		line-height 23px
+		margin-bottom 4px
+	&__data
+		margin-bottom 4px
+	&__image
+		float left
+		margin 0.3em 1em 1em 0
+		img
+			display block
+			border-radius 4px
+	&__text
+		font-size 13px
+		color #1d212b
+
+.news-wrapper
+	&:after
+		display table
+		content ""
+		clear both
+	@media screen and (min-width: $screen-md)
+		padding-bottom 30px
+	@media screen and (max-width: $screen-xs-max)
+		padding-top 25px
+		border-top 1px solid #e5e5e5
+
+.last-news
+	display block
+	margin-bottom 25px
+	&:hover
+		text-decoration none
+	&:after
+		content ""
+		display table
+		clear both
+	&__title
+		font-size 13px
+		color #1d212b
+		font-weight 600
+		line-height 23px
+		margin-bottom 4px
+	&__data
+		margin-bottom 10px
+	&__image
+		float left
+		margin 0.3em 1em 1em 0
+		img
+			display block
+			border-radius 4px
+			@media screen and (max-width: $screen-sm-max)
+				max-width 120px
+				height auto
+	&__text
+		font-size 13px
+		color #1d212b
